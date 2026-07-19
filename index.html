@@ -1,0 +1,1332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="A complete, self-paced SEO and GEO course. Plain English explanations, real examples, and checklists you can actually finish.">
+<meta name="theme-color" content="#0071e3">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='24' fill='%230071e3'/%3E%3Ctext x='50' y='68' font-size='58' font-family='-apple-system,Helvetica,Arial,sans-serif' font-weight='700' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<title>SEO & GEO: The Complete Course</title>
+<style>
+  :root{
+    --bg:#f5f5f7;
+    --bg-elev:#ffffff;
+    --bg-elev-2:#fbfbfd;
+    --text:#1d1d1f;
+    --text-secondary:#6e6e73;
+    --text-tertiary:#86868b;
+    --hairline:rgba(0,0,0,0.08);
+    --hairline-strong:rgba(0,0,0,0.12);
+    --blue:#0071e3;
+    --blue-press:#0058b0;
+    --green:#1fa669;
+    --green-soft:rgba(31,166,105,0.12);
+    --blue-soft:rgba(0,113,227,0.10);
+    --amber:#c9820a;
+    --amber-soft:rgba(201,130,10,0.12);
+    --red:#d0402a;
+    --card-shadow:0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
+    --radius-lg:22px;
+    --radius-md:16px;
+    --radius-sm:10px;
+    --nav-blur: saturate(180%) blur(20px);
+    --nav-bg: rgba(245,245,247,0.72);
+    color-scheme: light;
+  }
+  html[data-theme="night"]{
+    --bg:#000000;
+    --bg-elev:#1c1c1e;
+    --bg-elev-2:#141416;
+    --text:#f5f5f7;
+    --text-secondary:#a1a1a6;
+    --text-tertiary:#8e8e93;
+    --hairline:rgba(255,255,255,0.09);
+    --hairline-strong:rgba(255,255,255,0.14);
+    --blue:#2997ff;
+    --blue-press:#0a84ff;
+    --green:#32d074;
+    --green-soft:rgba(50,208,116,0.14);
+    --blue-soft:rgba(41,151,255,0.14);
+    --amber:#f0a92e;
+    --amber-soft:rgba(240,169,46,0.14);
+    --red:#ff6b57;
+    --card-shadow:0 1px 2px rgba(0,0,0,0.4), 0 8px 30px rgba(0,0,0,0.45);
+    --nav-bg: rgba(0,0,0,0.62);
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Inter", "Helvetica Neue", Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    transition:background .4s ease, color .4s ease;
+    letter-spacing:-0.011em;
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  a{color:inherit;}
+  button{font-family:inherit;}
+  :focus-visible{outline:2px solid var(--blue); outline-offset:2px; border-radius:6px;}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    position:sticky; top:0; z-index:50;
+    background:var(--nav-bg);
+    backdrop-filter:var(--nav-blur);
+    -webkit-backdrop-filter:var(--nav-blur);
+    border-bottom:1px solid var(--hairline);
+  }
+  .nav-inner{
+    max-width:1160px; margin:0 auto; padding:12px 24px;
+    display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:15px; white-space:nowrap;}
+  .brand-mark{
+    width:26px; height:26px; border-radius:8px;
+    background:linear-gradient(135deg, var(--blue), var(--green));
+    display:flex; align-items:center; justify-content:center;
+    color:#fff; font-size:13px; font-weight:700;
+  }
+  .segmented{
+    display:flex; background:rgba(118,118,128,0.12); padding:2px; border-radius:9px;
+    position:relative; flex-shrink:0;
+  }
+  html[data-theme="night"] .segmented{ background:rgba(118,118,128,0.24); }
+  .segmented button{
+    border:none; background:transparent; padding:6px 16px; border-radius:7px;
+    font-size:13px; font-weight:590; color:var(--text-secondary); cursor:pointer;
+    position:relative; z-index:1; transition:color .25s ease;
+  }
+  .segmented button.active{ color:var(--text); }
+  .segmented .thumb{
+    position:absolute; top:2px; bottom:2px; left:2px; width:calc(50% - 2px);
+    background:var(--bg-elev); border-radius:7px; box-shadow:0 1px 3px rgba(0,0,0,0.15);
+    transition:transform .32s cubic-bezier(.32,.72,0,1);
+  }
+  .segmented[data-track="geo"] .thumb{ transform:translateX(100%); }
+
+  .nav-right{display:flex; align-items:center; gap:12px;}
+  .ring-mini{display:flex; align-items:center; gap:8px; font-size:12px; color:var(--text-secondary);}
+  .icon-btn{
+    width:34px; height:34px; border-radius:50%; border:none; cursor:pointer;
+    background:rgba(118,118,128,0.14); display:flex; align-items:center; justify-content:center;
+    font-size:14px; transition:background .2s ease, transform .15s ease; flex-shrink:0;
+  }
+  .icon-btn:hover{ background:rgba(118,118,128,0.24); }
+  .icon-btn:active{ transform:scale(0.92); }
+  .theme-toggle{
+    width:44px; height:26px; border-radius:14px; border:none; cursor:pointer;
+    background:rgba(118,118,128,0.24); position:relative; flex-shrink:0;
+    transition:background .3s ease;
+  }
+  .theme-toggle .knob{
+    position:absolute; top:2px; left:2px; width:22px; height:22px; border-radius:50%;
+    background:#fff; box-shadow:0 1px 3px rgba(0,0,0,0.3);
+    display:flex; align-items:center; justify-content:center; font-size:12px;
+    transition:transform .32s cubic-bezier(.32,.72,0,1);
+  }
+  html[data-theme="night"] .theme-toggle .knob{ transform:translateX(18px); }
+
+  /* search bar (toggle open) */
+  .search-wrap{
+    position:relative; display:flex; align-items:center;
+  }
+  .search-input{
+    width:0; opacity:0; padding:0; border:none; background:rgba(118,118,128,0.14);
+    border-radius:9px; font-size:13.5px; color:var(--text); transition:width .28s ease, opacity .2s ease, padding .28s ease;
+    height:34px;
+  }
+  .search-input.open{ width:220px; opacity:1; padding:0 12px; }
+  .search-input:focus{ outline:none; background:rgba(118,118,128,0.22); }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    max-width:1160px; margin:0 auto; padding:76px 24px 40px;
+  }
+  .eyebrow{
+    font-size:13px; font-weight:600; letter-spacing:0.02em; color:var(--blue);
+    text-transform:uppercase; margin-bottom:14px; display:flex; align-items:center; gap:8px;
+  }
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--blue);}
+  h1.hero-title{
+    font-size:clamp(34px, 5.4vw, 58px); line-height:1.05; font-weight:680;
+    letter-spacing:-0.02em; margin:0 0 18px; max-width:780px;
+  }
+  .hero-sub{
+    font-size:clamp(17px, 2vw, 20px); color:var(--text-secondary); max-width:640px;
+    line-height:1.5; margin:0 0 30px; font-weight:420;
+  }
+  .hero-actions{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:32px;}
+  .btn{
+    border:none; border-radius:980px; padding:12px 22px; font-size:15px; font-weight:590;
+    cursor:pointer; transition:transform .15s ease, background .2s ease, opacity .2s ease;
+    display:inline-flex; align-items:center; gap:8px;
+  }
+  .btn:active{transform:scale(0.97);}
+  .btn-primary{background:var(--blue); color:#fff;}
+  .btn-primary:hover{background:var(--blue-press);}
+  .btn-ghost{background:var(--bg-elev); color:var(--text); border:1px solid var(--hairline-strong);}
+  .btn-ghost:hover{ background:var(--bg-elev-2); }
+  .btn-sm{ padding:8px 15px; font-size:13px; border-radius:980px; }
+
+  /* stats dashboard */
+  .stats-bar{
+    display:grid; grid-template-columns:repeat(4,1fr); gap:1px;
+    background:var(--hairline); border:1px solid var(--hairline);
+    border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--card-shadow); margin-bottom:26px;
+  }
+  .stat{ background:var(--bg-elev); padding:18px 20px; }
+  .stat-num{ font-size:26px; font-weight:680; letter-spacing:-0.02em; }
+  .stat-label{ font-size:12px; color:var(--text-tertiary); margin-top:2px; }
+  @media (max-width:700px){ .stats-bar{ grid-template-columns:1fr 1fr; } }
+
+  /* compare strip */
+  .compare{
+    display:grid; grid-template-columns:1fr 1fr; gap:1px;
+    background:var(--hairline); border:1px solid var(--hairline);
+    border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--card-shadow);
+  }
+  .compare > div{ background:var(--bg-elev); padding:22px 24px; }
+  .compare h3{margin:0 0 6px; font-size:15px; font-weight:650; display:flex; align-items:center; gap:8px;}
+  .compare p{margin:0; font-size:13.5px; color:var(--text-secondary); line-height:1.5;}
+  .badge{
+    display:inline-flex; align-items:center; justify-content:center;
+    width:20px; height:20px; border-radius:6px; font-size:11px; font-weight:700; color:#fff;
+  }
+  .badge.seo{background:var(--blue);}
+  .badge.geo{background:var(--green);}
+  @media (max-width:640px){ .compare{grid-template-columns:1fr;} }
+
+  /* ---------- PROGRESS RING ---------- */
+  .ring-svg circle{ fill:none; stroke-linecap:round; }
+  .ring-track{ stroke:rgba(118,118,128,0.2); }
+  .ring-fill{ stroke:var(--blue); transition:stroke-dashoffset .5s ease, stroke .4s ease; }
+  [data-track="geo"] .ring-fill{ stroke:var(--green); }
+
+  /* ---------- MAIN LAYOUT ---------- */
+  .layout{
+    max-width:1160px; margin:0 auto; padding:0 24px 120px;
+    display:grid; grid-template-columns:250px 1fr; gap:40px; align-items:start;
+  }
+  @media (max-width:860px){ .layout{grid-template-columns:1fr;} }
+
+  .toc{
+    position:sticky; top:78px; padding:20px 0;
+    max-height:calc(100vh - 100px); overflow:auto;
+  }
+  .toc-title{font-size:12px; font-weight:650; text-transform:uppercase; letter-spacing:.04em; color:var(--text-tertiary); margin:0 0 12px 4px;}
+  .toc-item{
+    display:flex; align-items:center; gap:10px; padding:9px 10px; border-radius:9px;
+    font-size:13.5px; color:var(--text-secondary); cursor:pointer; text-decoration:none;
+    transition:background .15s ease, color .15s ease; margin-bottom:2px;
+  }
+  .toc-item:hover{ background:rgba(118,118,128,0.10); color:var(--text); }
+  .toc-item.done{ color:var(--text); }
+  .toc-item.hidden-by-search{ display:none; }
+  .toc-item.active-view{ background:rgba(118,118,128,0.10); color:var(--text); font-weight:600; }
+  .toc-item.active-view::before{
+    content:''; position:absolute; width:3px; height:16px; border-radius:2px;
+    background:var(--blue); margin-left:-14px;
+  }
+  html[data-current-track="geo"] .toc-item.active-view::before{ background:var(--green); }
+  .toc-item{ position:relative; }
+  .toc-check{
+    width:16px; height:16px; border-radius:50%; border:1.5px solid var(--hairline-strong);
+    flex-shrink:0; display:flex; align-items:center; justify-content:center; font-size:10px; color:#fff;
+  }
+  .toc-item.done .toc-check{ background:var(--green); border-color:var(--green); }
+  .toc-reset{
+    margin-top:14px; width:100%; text-align:left; background:none; border:none; cursor:pointer;
+    font-size:12.5px; color:var(--text-tertiary); padding:9px 10px; border-radius:9px;
+  }
+  .toc-reset:hover{ background:rgba(118,118,128,0.10); color:var(--red); }
+
+  .modules{ padding-top:20px; }
+  .module{
+    background:var(--bg-elev); border:1px solid var(--hairline); border-radius:var(--radius-lg);
+    margin-bottom:18px; overflow:hidden; box-shadow:var(--card-shadow); scroll-margin-top:80px;
+  }
+  .module.hidden-by-search{ display:none; }
+  .module-head{
+    display:flex; align-items:center; gap:16px; padding:22px 24px; cursor:pointer; user-select:none;
+  }
+  .module-num{
+    width:38px; height:38px; border-radius:11px; flex-shrink:0;
+    display:flex; align-items:center; justify-content:center; font-size:15px; font-weight:650;
+    background:var(--blue-soft); color:var(--blue);
+  }
+  [data-track="geo"] .module-num{ background:var(--green-soft); color:var(--green); }
+  .module-num.complete{ background:var(--green); color:#fff; }
+  .module-headtext{flex:1; min-width:0;}
+  .module-title{font-size:18px; font-weight:640; margin:0 0 3px; letter-spacing:-0.01em;}
+  .module-meta{font-size:12.5px; color:var(--text-tertiary); display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+  .module-chevron{
+    width:28px; height:28px; border-radius:50%; background:rgba(118,118,128,0.12);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+    transition:transform .3s cubic-bezier(.32,.72,0,1);
+  }
+  .module.open .module-chevron{ transform:rotate(180deg); }
+  .module-body{
+    max-height:0; overflow:hidden; transition:max-height .4s cubic-bezier(.32,.72,0,1);
+  }
+  .module-body-inner{ padding:0 24px 28px; }
+
+  .action-row{ display:flex; gap:10px; flex-wrap:wrap; margin:2px 0 20px; }
+  .yt-btn{
+    display:inline-flex; align-items:center; gap:7px; background:var(--bg-elev-2);
+    border:1px solid var(--hairline); color:var(--text); text-decoration:none;
+    padding:8px 14px 8px 10px; border-radius:980px; font-size:13px; font-weight:560;
+    transition:border-color .2s ease, transform .15s ease;
+  }
+  .yt-btn:hover{ border-color:#ff0000; }
+  .yt-btn:active{ transform:scale(0.96); }
+  .yt-icon{ width:18px; height:13px; background:#ff0000; border-radius:4px; position:relative; flex-shrink:0; }
+  .yt-icon::after{
+    content:''; position:absolute; top:50%; left:50%; transform:translate(-40%,-50%);
+    border-style:solid; border-width:3.5px 0 3.5px 6px; border-color:transparent transparent transparent #fff;
+  }
+  .note-btn{
+    display:inline-flex; align-items:center; gap:7px; background:var(--bg-elev-2);
+    border:1px solid var(--hairline); color:var(--text-secondary); cursor:pointer;
+    padding:8px 14px; border-radius:980px; font-size:13px; font-weight:560;
+  }
+  .note-btn:hover{ color:var(--text); border-color:var(--hairline-strong); }
+  .mark-done-btn{
+    display:inline-flex; align-items:center; gap:7px; background:var(--green-soft);
+    border:1px solid transparent; color:var(--green); cursor:pointer;
+    padding:8px 14px; border-radius:980px; font-size:13px; font-weight:600;
+  }
+  .mark-done-btn.is-done{ background:var(--green); color:#fff; }
+
+  .plain{
+    background:var(--blue-soft); border-radius:var(--radius-md); padding:16px 18px; margin:4px 0 20px;
+    font-size:14.5px; line-height:1.55;
+  }
+  [data-track="geo"] .plain{ background:var(--green-soft); }
+  .plain b{ display:block; font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; margin-bottom:6px; color:var(--blue); font-weight:700;}
+  [data-track="geo"] .plain b{ color:var(--green); }
+
+  .module-body h4{ font-size:14.5px; font-weight:650; margin:22px 0 10px; }
+  .module-body p{ font-size:14.5px; line-height:1.6; color:var(--text); margin:0 0 12px; }
+  .module-body ul{ margin:0 0 14px; padding-left:20px; }
+  .module-body li{ font-size:14.5px; line-height:1.65; color:var(--text); margin-bottom:6px; }
+  .module-body li b{font-weight:650;}
+  code{
+    background:rgba(118,118,128,0.14); padding:2px 6px; border-radius:5px;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size:12.5px;
+  }
+  .example{
+    border:1px solid var(--hairline); border-radius:var(--radius-md); padding:16px 18px; margin:14px 0 18px;
+    background:var(--bg-elev-2);
+  }
+  .example b{ font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--amber); display:flex; align-items:center; gap:6px; margin-bottom:8px;}
+
+  .checklist{
+    border:1px solid var(--hairline); border-radius:var(--radius-md); padding:6px; margin-top:18px; background:var(--bg-elev-2);
+  }
+  .checklist-title{ font-size:12px; font-weight:650; text-transform:uppercase; letter-spacing:.04em; color:var(--text-tertiary); padding:10px 12px 2px; }
+  .check-row{
+    display:flex; align-items:flex-start; gap:12px; padding:10px 12px; border-radius:9px; cursor:pointer;
+    transition:background .15s ease;
+  }
+  .check-row:hover{ background:rgba(118,118,128,0.08); }
+  .check-box{
+    width:20px; height:20px; border-radius:6px; border:1.6px solid var(--hairline-strong); flex-shrink:0; margin-top:1px;
+    display:flex; align-items:center; justify-content:center; font-size:12px; color:#fff; transition:all .15s ease;
+  }
+  .check-row.checked .check-box{ background:var(--green); border-color:var(--green); }
+  .check-row.checked .check-label{ color:var(--text-tertiary); text-decoration:line-through; }
+  .check-label{ font-size:14px; line-height:1.5; }
+
+  .try-this{
+    margin-top:16px; padding:14px 18px; border-radius:var(--radius-md);
+    background:var(--amber-soft); font-size:14px; line-height:1.55;
+  }
+  .try-this b{ color:var(--amber); font-weight:700; }
+
+  .notes-area{ display:none; margin-top:16px; }
+  .notes-area.open{ display:block; }
+  .notes-area textarea{
+    width:100%; min-height:90px; border-radius:var(--radius-md); border:1px solid var(--hairline-strong);
+    background:var(--bg-elev-2); color:var(--text); padding:12px 14px; font-size:13.5px; line-height:1.55;
+    font-family:inherit; resize:vertical;
+  }
+  .notes-area textarea:focus{ outline:none; border-color:var(--blue); }
+  .notes-label{ font-size:11.5px; text-transform:uppercase; letter-spacing:.04em; color:var(--text-tertiary); margin-bottom:6px; display:block; font-weight:650; }
+
+  footer{
+    max-width:1160px; margin:0 auto; padding:40px 24px 80px; border-top:1px solid var(--hairline);
+    color:var(--text-tertiary); font-size:12.5px; text-align:center;
+  }
+
+  .glossary{
+    max-width:1160px; margin:0 auto; padding:20px 24px 60px;
+  }
+  .glossary h2{ font-size:26px; font-weight:650; letter-spacing:-0.015em; margin-bottom:6px; }
+  .glossary-sub{ color:var(--text-secondary); font-size:14.5px; margin-bottom:24px; }
+  .gloss-grid{
+    display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:14px;
+  }
+  .gloss-card{
+    background:var(--bg-elev); border:1px solid var(--hairline); border-radius:var(--radius-md);
+    padding:16px 18px; box-shadow:var(--card-shadow);
+  }
+  .gloss-card b{ font-size:13.5px; display:block; margin-bottom:5px; }
+  .gloss-card span{ font-size:13px; color:var(--text-secondary); line-height:1.5; }
+
+  .track-panel{ display:none; }
+  .track-panel.visible{ display:block; }
+
+  .back-to-top{
+    position:fixed; bottom:26px; right:26px; width:44px; height:44px; border-radius:50%;
+    background:var(--bg-elev); border:1px solid var(--hairline-strong); box-shadow:var(--card-shadow);
+    display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:16px;
+    opacity:0; pointer-events:none; transition:opacity .25s ease, transform .2s ease; z-index:40;
+  }
+  .back-to-top.visible{ opacity:1; pointer-events:auto; }
+  .back-to-top:active{ transform:scale(0.92); }
+
+  .no-results{ text-align:center; padding:60px 20px; color:var(--text-tertiary); font-size:14.5px; }
+
+  .celebration{
+    position:fixed; top:78px; left:50%; transform:translateX(-50%) translateY(-16px);
+    background:var(--bg-elev); border:1px solid var(--hairline-strong); box-shadow:var(--card-shadow);
+    border-radius:980px; padding:12px 22px; display:flex; align-items:center; gap:10px;
+    font-size:13.5px; font-weight:590; z-index:60; opacity:0; pointer-events:none;
+    transition:opacity .3s ease, transform .3s ease;
+  }
+  .celebration.visible{ opacity:1; transform:translateX(-50%) translateY(0); }
+  .celebration-emoji{ font-size:16px; }
+
+  @media print{
+    .nav, .back-to-top, .hero-actions, .toc-reset, .action-row{ display:none !important; }
+    .module-body{ max-height:none !important; }
+    .module{ break-inside:avoid; box-shadow:none; }
+  }
+
+  ::-webkit-scrollbar{width:10px; height:10px;}
+  ::-webkit-scrollbar-thumb{background:rgba(118,118,128,0.35); border-radius:10px;}
+  ::-webkit-scrollbar-track{background:transparent;}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-mark">S</div>
+      SEO & GEO Mastery
+    </div>
+    <div class="segmented" id="segmented" data-track="seo">
+      <div class="thumb"></div>
+      <button class="active" data-track-btn="seo">SEO</button>
+      <button data-track-btn="geo">GEO</button>
+    </div>
+    <div class="nav-right">
+      <div class="search-wrap">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search modules...">
+        <button class="icon-btn" id="searchToggle" aria-label="Search modules">🔍</button>
+      </div>
+      <div class="ring-mini">
+        <svg width="24" height="24" viewBox="0 0 24 24" class="ring-svg">
+          <circle class="ring-track" cx="12" cy="12" r="9.5" stroke-width="3"></circle>
+          <circle class="ring-fill" id="navRing" cx="12" cy="12" r="9.5" stroke-width="3" stroke-dasharray="59.7" stroke-dashoffset="59.7" transform="rotate(-90 12 12)"></circle>
+        </svg>
+        <span id="navRingLabel">0%</span>
+      </div>
+      <button class="icon-btn" id="printBtn" aria-label="Print or export course" title="Print / export">🖨️</button>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle day and night mode">
+        <span class="knob" id="themeKnob">☀️</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<div class="hero">
+  <div class="eyebrow"><span class="dot"></span> Written for people who'd rather understand it than memorise it</div>
+  <h1 class="hero-title">Get found by Google. Get quoted by AI.</h1>
+  <p class="hero-sub">Two tracks, one goal. More of the right people finding you, whether they're typing into a search box or asking ChatGPT a question. Built from years of doing this for real clients, explained the way you'd explain it to a mate over coffee.</p>
+  <div class="hero-actions">
+    <button class="btn btn-primary" onclick="scrollToFirstModule()">Start with Module 1</button>
+    <button class="btn btn-ghost" onclick="document.getElementById('glossary').scrollIntoView({behavior:'smooth'})">Jump to glossary</button>
+  </div>
+
+  <div class="stats-bar" id="statsBar"></div>
+
+  <div class="compare">
+    <div>
+      <h3><span class="badge seo">S</span> SEO. Search Engine Optimisation</h3>
+      <p>Getting your pages to show up, and rank high, in Google and Bing's results. The game has been played for over two decades. The rules are well understood, even if Google never fully publishes them.</p>
+    </div>
+    <div>
+      <h3><span class="badge geo">G</span> GEO. Generative Engine Optimisation</h3>
+      <p>Getting your content quoted, summarised, or recommended inside AI answers: ChatGPT, Perplexity, Google's AI Overviews, Gemini. Same underlying idea, but a very different machine reading the page.</p>
+    </div>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="toc">
+    <p class="toc-title" id="tocTitle">SEO Track</p>
+    <div id="tocList"></div>
+    <button class="toc-reset" id="resetBtn">Reset my progress</button>
+  </aside>
+
+  <main class="modules">
+    <div class="track-panel visible" id="panel-seo"></div>
+    <div class="track-panel" id="panel-geo"></div>
+    <p class="no-results" id="noResults" style="display:none;">Nothing matches that search. Try a different word.</p>
+  </main>
+</div>
+
+<div class="glossary" id="glossary">
+  <h2>Plain English glossary</h2>
+  <p class="glossary-sub">The jargon, translated. Bookmark this bit.</p>
+  <div class="gloss-grid" id="glossGrid"></div>
+</div>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+<div class="celebration" id="celebration">
+  <span class="celebration-emoji">🎉</span>
+  <span class="celebration-text">Track complete.</span>
+</div>
+
+<footer>
+  Built for Limon Ghosh, MindfulClicks / Digitalytics. Your progress and notes are saved automatically on this device.
+</footer>
+
+<script>
+/* ============================================================
+   CONTENT DATA
+   ============================================================ */
+const SEO_MODULES = [
+  {
+    title:"How Search Actually Works",
+    time:"12 min",
+    yt:"how does Google search work crawling indexing ranking explained",
+    plain:"Google doesn't know your website exists until a robot visits it, reads it, and adds it to a giant filing cabinet. When someone searches, Google isn't scanning the live internet in that instant. It's searching that filing cabinet and ranking whatever it already has on file.",
+    body:`
+      <h4>The three jobs a search engine does</h4>
+      <ul>
+        <li><b>Crawling.</b> Robots (Google calls theirs Googlebot) follow links from page to page, downloading what they find. If nothing links to a page, the robot may never stumble on it.</li>
+        <li><b>Indexing.</b> Whatever got crawled is read and filed away, along with notes on what the page is about, whether it duplicates something else, and whether it's actually worth showing anyone.</li>
+        <li><b>Ranking.</b> When a search happens, Google digs through the index and orders the results by what it thinks best answers that specific query. There are well over 200 signals involved.</li>
+      </ul>
+      <h4>The four buckets your ranking comes from</h4>
+      <p>Two hundred-plus signals sounds overwhelming until you realise almost all of them fall into one of four buckets. Thinking in buckets is what keeps SEO manageable instead of exhausting.</p>
+      <ul>
+        <li><b>The page itself.</b> Does this specific page answer the question well? Title, headings, content quality, how long people stick around.</li>
+        <li><b>The keyword match.</b> Does the page's topic line up with what was actually typed in?</li>
+        <li><b>The whole domain.</b> Is this a site Google generally trusts, based on its history and overall authority?</li>
+        <li><b>The outside world.</b> Do other sites link to it, mention it, or send it traffic? Think of this as Google running a reference check on you.</li>
+      </ul>
+      <h4>Search intent, the part most beginners skip</h4>
+      <p>Every search falls into roughly one of three moods. Get this wrong and nothing else you do matters much, because you'll be answering a question nobody asked.</p>
+      <ul>
+        <li><b>Informational.</b> "how does GTM tracking work". They want to learn something.</li>
+        <li><b>Navigational.</b> "Xero login". They already know exactly where they're going.</li>
+        <li><b>Transactional.</b> "buy running shoes size 10". They're ready to act, right now.</li>
+      </ul>
+    `,
+    example:`A running shoe brand ranking number one for "best running shoes" with a 3,000-word blog post will still lose to a basic category page if most searchers actually want to buy, not read. Matching intent beats writing more words, almost every time.`,
+    checklist:[
+      "Search your main keyword in an incognito window and note what kind of pages currently rank: guides, product pages, comparisons",
+      "Write down the search intent for your top 5 target keywords",
+      "Check whether your homepage or key landing page actually matches that intent"
+    ],
+    tryThis:"Pick one keyword you want to rank for and search it. Look at the top three results. Are they blog posts, product pages, something else entirely? That tells you what Google thinks the intent is, whether you agree with it or not."
+  },
+  {
+    title:"Keyword Research That Doesn't Waste Your Time",
+    time:"15 min",
+    yt:"keyword research for SEO beginners tutorial",
+    plain:"Keyword research isn't about chasing the highest search volume word you can find. It's about working out what real people type when they're one step away from needing you, then checking you can realistically compete for it.",
+    body:`
+      <h4>Short tail versus long tail</h4>
+      <ul>
+        <li><b>Short tail.</b> "shoes". Huge volume, brutal competition, vague intent. Nearly impossible to rank for without a decade of built-up history.</li>
+        <li><b>Long tail.</b> "waterproof trail running shoes for wide feet". Lower volume, but the person searching is much closer to buying, and far fewer sites are fighting for it.</li>
+      </ul>
+      <p>Most of the real, compounding traffic for small and mid-size sites comes from long tail terms stacked together, not from winning one big generic word.</p>
+      <h4>A workflow that actually works</h4>
+      <ul>
+        <li><b>Seed list.</b> Write 10 to 20 terms your customers would actually use, in their own words, not your internal jargon.</li>
+        <li><b>Expand.</b> Run those through a keyword tool (Ahrefs, SEMrush, or even Google's free Keyword Planner) to see related searches, volume, and difficulty.</li>
+        <li><b>Check the results page.</b> For anything promising, search it and see who currently ranks. If it's all major brands with huge authority, that's a hint to go more specific.</li>
+        <li><b>Cluster.</b> Group similar keywords that one strong page could realistically answer, rather than building a thin, separate page for every variation.</li>
+      </ul>
+      <h4>Why clustering matters</h4>
+      <p>Google understands that "running shoes for flat feet" and "best shoes for overpronation" are asking almost the same question. One strong page targeting the whole cluster beats five weak pages fighting over scraps of it, and stops you competing against yourself.</p>
+    `,
+    example:`Instead of building separate pages for "payroll software NZ", "payroll software New Zealand", and "best NZ payroll system", one well-built comparison page can realistically rank for all three, because they're the same underlying question asked three different ways.`,
+    checklist:[
+      "Build a seed list of 15 real customer phrases, not your internal product names",
+      "Run them through a keyword tool and note volume and difficulty",
+      "Group the list into 4 to 6 topic clusters",
+      "Pick one cluster and check what's currently ranking for it"
+    ],
+    tryThis:"Ask three customers or colleagues, in their own words rather than yours, how they'd search for what you sell. You'll almost always find a phrase you weren't targeting."
+  },
+  {
+    title:"On-Page SEO. What Actually Lives on the Page",
+    time:"18 min",
+    yt:"on page SEO tutorial title tags meta description",
+    plain:"On-page SEO is everything you control directly on your own page: the words in the title bar, the headline, the copy, the URL. It's the part of SEO with the least mystery, because it's the part you fully own.",
+    body:`
+      <h4>Title tags. The single most important line on the page</h4>
+      <p>This is the blue clickable headline in search results, and it's also the browser tab text. Keep it 50 to 60 characters, put the keyword near the front, make every page's title unique, and write it for a human first.</p>
+      <div class="example"><b>⚙ Good vs generic</b>
+      Generic: <code>Home | Acme Shoes</code><br>
+      Better: <code>Trail Running Shoes for Wide Feet | Acme Shoes NZ</code></div>
+      <h4>Meta descriptions</h4>
+      <p>This doesn't directly move your ranking, but it's your ad copy on the results page. It decides whether someone clicks you or the competitor sitting below you. Aim for 140 to 155 characters, give a genuine reason to click, and use the keyword naturally once.</p>
+      <h4>Headers (H1, H2, H3)</h4>
+      <p>Think of headers as a table of contents for both your reader and Google. One H1 per page, your main headline, then H2s for major sections, H3s for sub-points. Skipping levels or stuffing keywords into every header just looks spammy and reads badly.</p>
+      <h4>URL structure</h4>
+      <p>Short, readable, hyphen-separated, and describing what's actually on the page. <code>/blog/how-tag-manager-works</code> beats <code>/blog/post?id=4471</code> every time, for both humans and search engines.</p>
+      <h4>Internal linking</h4>
+      <p>Linking between your own pages does two things. It helps Google find and understand new pages faster, and it passes some authority from your strong pages to your newer or weaker ones. Link using descriptive text, "see our GTM setup guide", never "click here".</p>
+      <h4>Image optimisation</h4>
+      <p>Search engines can't see a photo. The <code>alt</code> text tells them, and screen readers, what it actually is. Describe it plainly, "woman running on a forest trail in Acme trail shoes", and compress the file so it doesn't slow the page down.</p>
+    `,
+    example:`On a Shopify product page, changing a title tag from "Home" (the theme default nobody bothered to edit) to something keyword-rich and specific can lift click-through rate noticeably, with no other change required.`,
+    checklist:[
+      "Audit your 10 most important pages' title tags. Any duplicated or missing?",
+      "Rewrite 5 meta descriptions to include a genuine reason to click",
+      "Check every page has exactly one H1",
+      "Add descriptive alt text to any images currently missing it",
+      "Fix any URLs still showing IDs or query strings instead of words"
+    ],
+    tryThis:"Open your homepage's page source (right-click, View Page Source) and search for the word title. Read what's there out loud. Would you click it if you were a stranger?"
+  },
+  {
+    title:"Technical SEO. The Plumbing Nobody Sees",
+    time:"20 min",
+    yt:"technical SEO audit tutorial for beginners",
+    plain:"Technical SEO is making sure Google's robots can actually reach, read, and trust your site. You can write the best content in the world, but if the plumbing underneath is broken, none of it gets seen.",
+    body:`
+      <h4>Core Web Vitals and site speed</h4>
+      <p>Google measures how a page actually feels to use in practice: how fast the main content appears, how quickly it responds to a tap or click, and whether things jump around while it's loading. Slow, janky pages get pushed down, and they lose real visitors before Google even factors in.</p>
+      <h4>Mobile-first indexing</h4>
+      <p>Google now looks at your mobile site to decide your ranking, even for desktop searches, because most of the web gets browsed on phones. If your mobile site is a stripped-down, weaker version of your desktop one, you're effectively being ranked on the worse version.</p>
+      <h4>Crawlability and robots.txt</h4>
+      <p><code>robots.txt</code> is a simple text file sitting at yoursite.com/robots.txt that tells robots which parts of the site to skip. Useful for blocking admin pages or duplicate filtered URLs, and genuinely dangerous if you accidentally block pages you actually want ranked.</p>
+      <h4>XML sitemaps</h4>
+      <p>A sitemap is a list of every important URL on your site, submitted through Google Search Console, so robots get a map instead of relying purely on stumbling across links. Especially useful for large or newer sites.</p>
+      <h4>Structured data (schema)</h4>
+      <p>Extra code added to a page spelling out, in a format machines understand, exactly what something is. "This is a Product, it costs $129, it has 4.8 stars from 212 reviews." This is what unlocks star ratings, FAQ dropdowns, and recipe cards in search results, and it matters even more for GEO, covered in the second track.</p>
+      <h4>Canonical tags and duplicate content</h4>
+      <p>If the same content is reachable at two different URLs, which is common with filters, tracking parameters, or www versus non-www, a canonical tag tells Google "these are the same, count this one as the real version." Without it, you can end up splitting your own ranking power against yourself.</p>
+      <h4>JavaScript SEO, the modern trap</h4>
+      <p>Sites built heavily in frameworks like React can load content in a way that search engine robots see as a blank page unless it's rendered properly first. If a site looks empty when you view its source code but looks normal in a browser, this is worth checking urgently.</p>
+    `,
+    example:`A Shopify store adding Product schema to every listing started showing star ratings directly in Google results within a couple of weeks. No ranking change was required, just a far more clickable result.`,
+    checklist:[
+      "Run your homepage through Google's PageSpeed Insights and note the Core Web Vitals score",
+      "Check robots.txt isn't accidentally blocking important pages",
+      "Confirm an XML sitemap exists and is submitted in Search Console",
+      "Add or verify structured data on your key page types: product, article, FAQ, local business",
+      "Search site:yourdomain.com in Google to see roughly how many pages are actually indexed"
+    ],
+    tryThis:"View your homepage's source code (Ctrl or Cmd+U) and search for the main headline text. If it's not there, your content may be loading in a way robots struggle to read."
+  },
+  {
+    title:"Content and E-E-A-T. Writing What Actually Ranks",
+    time:"16 min",
+    yt:"Google EEAT explained content quality guide",
+    plain:"Google increasingly asks not just is this page about the right topic, but should I trust whoever wrote it. That trust test has a name: E-E-A-T.",
+    body:`
+      <h4>What E-E-A-T actually stands for</h4>
+      <ul>
+        <li><b>Experience.</b> Has the author actually used, done, or lived this? First-hand photos, specifics, and detail signal real experience over a rewritten summary.</li>
+        <li><b>Expertise.</b> Does the content show real depth, rather than a surface-level rephrasing of whatever's already ranking?</li>
+        <li><b>Authoritativeness.</b> Is this person or site recognised elsewhere as a reliable source on the topic?</li>
+        <li><b>Trustworthiness.</b> Accurate, transparent, easy to verify: clear authorship, sources, no bait and switch.</li>
+      </ul>
+      <h4>Content gap analysis</h4>
+      <p>Look at what's already ranking for a keyword you want, and find the genuine question those pages leave unanswered. That gap, the thing a real customer would still wonder after reading the top three results, is your opening.</p>
+      <h4>Matching content to the funnel</h4>
+      <p>Not every page should try to sell. Someone researching "how does SEO tracking work" isn't ready for a hard pitch. They need a clear answer first, with a soft next step. Someone searching "SEO agency pricing NZ" is much closer to buying and should see pricing, proof, and a clear call to action.</p>
+      <h4>Freshness</h4>
+      <p>For fast-moving topics, pricing, tools, algorithm changes, a genuinely updated page (not just a changed date stamp) regularly outperforms an old one. Outdated advice actively erodes trust once a reader spots it.</p>
+    `,
+    example:`A well-written beginner's guide that nobody had written before, backed by real screenshots and numbers from actual campaigns, will consistently outrank a generic rewrite of the same five points every competitor already has.`,
+    checklist:[
+      "List your top 3 competing pages for a target keyword and note one real gap they leave unanswered",
+      "Add a visible author bio with genuine credentials to your key articles",
+      "Update the two oldest, highest-traffic pages on your site with current information",
+      "Match each key landing page to a funnel stage: learn, compare, buy, and check the content actually fits"
+    ],
+    tryThis:"Reread your best-performing page as if you were the customer. Is there a question you'd still have after reading it? Answer that question, and you've likely found your next content win."
+  },
+  {
+    title:"Off-Page SEO and Link Building",
+    time:"14 min",
+    yt:"link building strategies SEO backlinks tutorial",
+    plain:"A backlink is another website vouching for yours. Google treats links roughly like reference checks: lots of low-quality references mean little, one respected reference means a lot.",
+    body:`
+      <h4>Why links still matter</h4>
+      <p>Close to half of what decides your domain's overall authority sits outside your own site: who links to you, how relevant those sites are, and how naturally those links were earned.</p>
+      <h4>What a good link looks like</h4>
+      <ul>
+        <li>Comes from a site relevant to your industry, not a random directory</li>
+        <li>Sits within real, readable content, not a footer link farm</li>
+        <li>Uses natural anchor text, not the exact same keyword every time</li>
+        <li>Was earned because your content was genuinely useful, referenced, or newsworthy</li>
+      </ul>
+      <h4>What to avoid</h4>
+      <p>Buying large batches of links, swapping links purely for links, or stuffing identical exact-match anchor text across hundreds of low-quality sites. These are exactly the patterns Google's spam systems are built to catch, and the risk of a manual penalty far outweighs any short-term gain.</p>
+      <h4>Realistic ways to earn links</h4>
+      <ul>
+        <li><b>Original data or research.</b> Journalists and bloggers link to genuine numbers.</li>
+        <li><b>Being a useful source.</b> Responding to journalist requests with genuine expertise.</li>
+        <li><b>Digital PR.</b> A genuinely newsworthy angle pitched to relevant publications.</li>
+        <li><b>Guest content.</b> Written for a real audience fit, not just for the link.</li>
+      </ul>
+    `,
+    example:`A single relevant link from an established industry publication typically does more for a domain's authority than fifty low-quality directory links combined, and it carries none of the penalty risk.`,
+    checklist:[
+      "Check your current backlink profile in a free tool (Ahrefs or Moz both offer limited free checks)",
+      "Identify 5 sites in your industry that would realistically link to something you could create",
+      "Draft one piece of genuinely link-worthy content: original data, a useful tool, a strong guide",
+      "Review your anchor text. Is it varied and natural, or repetitive and exact-match?"
+    ],
+    tryThis:"Search \"your brand name\" -site:yourdomain.com in Google. Anyone already mentioning you without linking is a fast, easy outreach opportunity. Just ask them to link the mention."
+  },
+  {
+    title:"Local and International SEO",
+    time:"14 min",
+    yt:"local SEO Google Business Profile tutorial",
+    plain:"If customers find you by location, a city, a country, a region, this is where the real wins are, and it plays by very different rules to ranking for a broad global keyword.",
+    body:`
+      <h4>Google Business Profile</h4>
+      <p>For anyone with a physical location or service area, this free listing is often more valuable than any blog post you could write. Complete every field, keep hours accurate, respond to reviews, and post updates regularly. Google visibly rewards active, complete profiles.</p>
+      <h4>Choosing how to target different countries</h4>
+      <ul>
+        <li><b>Country-code domain</b> (example.co.nz). The clearest signal to Google and to users, but expensive and harder to maintain across markets.</li>
+        <li><b>Subdomain</b> (nz.example.com). Easy to set up, allows separate geo-targeting in Search Console.</li>
+        <li><b>Subdirectory</b> (example.com/nz/). Easiest to maintain, shares authority with the main domain, and most commonly recommended for small to mid-size businesses expanding into new markets.</li>
+      </ul>
+      <h4>hreflang, the most misunderstood tag in SEO</h4>
+      <p>When the same content exists in multiple languages or for multiple regions, <code>hreflang</code> tells Google "show the English NZ version to searchers in New Zealand, the English AU version to searchers in Australia." It's a signal, not a command, Google can still override it, but getting it wrong is one of the most common reasons the wrong country's page shows up in the wrong market.</p>
+      <h4>Local content signals</h4>
+      <p>Genuine local relevance, a suburb mentioned naturally in the content, local case studies, local phone numbers, local testimonials, consistently outperforms simply swapping a city name into a title tag.</p>
+    `,
+    example:`An airport transfer business ranking separately in London and Sydney needs genuinely separate, locally specific pages, not one page with the city name swapped out, because the searchers and local competitors are entirely different in each market.`,
+    checklist:[
+      "Claim and fully complete your Google Business Profile if you have a physical or service location",
+      "Check whether you're targeting multiple countries, and if so, whether hreflang is set up correctly",
+      "Add genuinely local detail (suburb names, local proof points) to location-specific pages",
+      "Set your preferred country target in Google Search Console if applicable"
+    ],
+    tryThis:"Search your business type plus your city from an incognito window on your phone. Check where you sit in the local map pack (the three-listing block with the map). That's often more valuable real estate than the blue links below it."
+  }
+];
+
+const GEO_MODULES = [
+  {
+    title:"What Is GEO (and Why It Isn't Just SEO for AI)",
+    time:"13 min",
+    yt:"what is generative engine optimization GEO explained",
+    plain:"SEO gets you a ranked position in a list of links. GEO gets your facts, or your framing, or your brand woven directly into the answer someone reads, often with no click to your site at all.",
+    body:`
+      <h4>The fundamental shift</h4>
+      <p>When someone asks Google a question, they usually get ten blue links and click one. When someone asks ChatGPT, Perplexity, or Google's AI Overview the same question, they often get a single written answer, synthesised from several sources, sometimes with citations, sometimes without.</p>
+      <p>That changes the whole goal. In SEO, you're optimising to be chosen and clicked. In GEO, you're optimising to be read, understood correctly, and referenced. The click becomes optional rather than the entire point.</p>
+      <h4>Who's actually doing the asking</h4>
+      <ul>
+        <li><b>ChatGPT / ChatGPT Search.</b> Blends its training knowledge with live web retrieval for current questions.</li>
+        <li><b>Perplexity.</b> Built specifically as an "answer engine", heavily citation-focused.</li>
+        <li><b>Google AI Overviews.</b> The AI-written summary now appearing above traditional results for many searches.</li>
+        <li><b>Gemini.</b> Google's assistant, increasingly woven into Search, Chrome, and Workspace.</li>
+      </ul>
+      <h4>Two different jobs happening under the hood</h4>
+      <p>It helps to separate what's actually happening, in plain terms.</p>
+      <ul>
+        <li><b>Retrieval.</b> The AI tool goes and finds relevant pages right now, similar to a search engine fetching results.</li>
+        <li><b>Generation.</b> The AI model then writes a fresh answer in its own words, deciding what to include, what to leave out, and what, if anything, to cite.</li>
+      </ul>
+      <p>SEO mostly influences whether you get found in that first step. GEO is about making sure that once found, your content is easy to lift accurately, and worth crediting.</p>
+    `,
+    example:`A Shopify store's returns policy page might never get clicked directly from an AI answer, but if ChatGPT correctly summarises "Acme offers 30 day free returns" when a shopper asks, that's a sale-influencing win most SEO tools won't show you.`,
+    checklist:[
+      "Ask ChatGPT, Perplexity, and Google (with AI Overviews) the same question a customer would ask about your industry",
+      "Note whether your brand is mentioned, cited, or absent in each answer",
+      "Check whether the information given about you, if any, is actually accurate"
+    ],
+    tryThis:"Ask an AI assistant something you're confident you have the best answer for online. If it doesn't mention you, that's not a failure, it's your starting baseline."
+  },
+  {
+    title:"How AI Models Actually Choose What to Cite",
+    time:"16 min",
+    yt:"how does retrieval augmented generation work explained simply",
+    plain:"An AI model can't read your whole website in one go and decide it likes you. It works with small chunks of text, matched by meaning rather than exact keywords, and understanding that changes how you should write.",
+    body:`
+      <h4>Chunking, in plain terms</h4>
+      <p>Rather than reading an entire page as one block, these systems typically break content into smaller chunks: a paragraph, a section, sometimes a single sentence. Each chunk gets pulled up independently, which means a brilliant page with one buried, badly worded answer might still get skipped in favour of a plainer page that states the same fact clearly and on its own.</p>
+      <h4>Embeddings, matching by meaning rather than exact words</h4>
+      <p>Without getting too technical, these systems convert text into a kind of numerical meaning fingerprint, and match a question to content with a similar fingerprint, even if none of the exact words line up. This is why writing naturally, the way a person would actually ask or answer, tends to outperform old-school exact-match keyword stuffing.</p>
+      <h4>What tends to get chosen</h4>
+      <ul>
+        <li><b>Directness.</b> A chunk that clearly and completely answers one question, without needing the surrounding paragraph to make sense.</li>
+        <li><b>Specificity.</b> Concrete numbers, dates, and named details over vague claims.</li>
+        <li><b>Structure.</b> Content organised under clear headings and short paragraphs is easier to lift cleanly.</li>
+        <li><b>Recognised authority.</b> Being an established, consistently cited source on a topic makes a model more likely to trust and reuse your framing.</li>
+        <li><b>Freshness.</b> For time-sensitive topics, visibly current information beats a stale page.</li>
+      </ul>
+      <h4>What this means in practice</h4>
+      <p>A page that rambles for three paragraphs before answering the actual question buries its best chunk. A page that states the answer plainly at the start of a section, then supports it, gives the model a clean, self-contained piece of text to lift.</p>
+    `,
+    example:`"Our returns policy allows 30 days from delivery, with free return shipping on all standard orders" is far more liftable by an AI model than a paragraph that eventually implies the same thing after two sentences of brand storytelling.`,
+    checklist:[
+      "Pick 3 key pages and check whether the core answer appears in the first sentence of its section",
+      "Rewrite any buried, essential facts (pricing, policies, specs) to be stated directly and on their own",
+      "Break up any long, wandering paragraphs into shorter, clearly headed chunks"
+    ],
+    tryThis:"Take one paragraph from your site and read only its first sentence, on its own. Does it answer a real question by itself? If not, restructure it so it does."
+  },
+  {
+    title:"Writing and Structuring Content for AI Answers",
+    time:"17 min",
+    yt:"how to write content for AI search optimization",
+    plain:"The single biggest lever in GEO is writing so the answer comes first, then the explanation. That's the exact opposite of the traditional build-up-to-the-point style most web copy still uses.",
+    body:`
+      <h4>Answer-first writing</h4>
+      <p>Traditional web copy often builds context, then arrives at the point. AI-friendly writing states the answer immediately, then backs it up. This isn't dumbing content down, it's respecting that both humans skimming and machines extracting want the payoff up front.</p>
+      <div class="example"><b>⚙ Before vs after</b>
+      Before: "There are many factors to consider when thinking about site speed, and over the years we've found that..." (the answer arrives three sentences later)<br><br>
+      After: "Site speed affects ranking through Core Web Vitals, specifically how fast the main content loads. Here's why that matters..."</div>
+      <h4>FAQ and Q&A formatting</h4>
+      <p>Structuring genuine, specific questions as their own headed sections, not necessarily using FAQ schema, though that helps too, gives AI systems an obvious, extractable question-and-answer pair to lift almost verbatim. That's exactly the shape most AI-generated answers take.</p>
+      <h4>Definitions matter more than they used to</h4>
+      <p>A clean, one-sentence definition of a term you're known for ("Technical SEO is...") is one of the most commonly lifted chunk types across AI answers, because it's short, self-contained, and directly answers a common question type: what is X.</p>
+      <h4>Structured data still helps</h4>
+      <p>FAQ schema, Article schema, and Organization schema (covered more in the next module) don't just help traditional search. They give AI systems a machine-readable confirmation of what a piece of content actually is, reducing the chance of it being misread or misattributed.</p>
+      <h4>Be quotable, not clever</h4>
+      <p>Wordplay, brand voice, and cleverness are genuinely valuable for a human reader, but a paragraph that leads with a pun before the actual fact is a paragraph an AI system is more likely to paraphrase incorrectly, or skip in favour of a plainer competitor.</p>
+    `,
+    example:`A SaaS company restructured its pricing page to state "Our starter plan is $49 a month, billed annually, and includes up to 5 users" as a standalone sentence, instead of scattering the same facts across a comparison table. AI assistants began quoting the price accurately not long after.`,
+    checklist:[
+      "Rewrite your top 3 pages to lead each section with the direct answer, not the build-up",
+      "Add clear, one-sentence definitions for the 3 to 5 terms most central to your business",
+      "Turn genuine, specific customer questions into their own headed Q&A sections",
+      "Check your pricing, policies, and specs are stated as standalone facts, not buried in a table"
+    ],
+    tryThis:"Find the sentence on your site that best defines what you do. Read only that sentence. If it needs the paragraph around it to make sense, tighten it until it doesn't."
+  },
+  {
+    title:"Technical GEO. Setting Up the Plumbing for AI Crawlers",
+    time:"15 min",
+    yt:"robots.txt for AI crawlers GPTBot ClaudeBot explained",
+    plain:"AI companies run their own robots, separate from Googlebot, and you can choose whether to let them in, the same way you've always been able to control Googlebot through robots.txt.",
+    body:`
+      <h4>Meet the AI crawlers</h4>
+      <ul>
+        <li><b>GPTBot.</b> OpenAI's crawler, used for training and retrieval.</li>
+        <li><b>ClaudeBot.</b> Anthropic's crawler.</li>
+        <li><b>PerplexityBot.</b> Perplexity's crawler, used to power live answers.</li>
+        <li><b>Google-Extended.</b> Controls whether Google can use your content for Gemini and AI features, separately from normal Googlebot search indexing.</li>
+      </ul>
+      <p>Each has its own name and can be individually allowed or blocked in <code>robots.txt</code>, exactly like you'd manage Googlebot. Blocking all of them protects your content from being used, but it also removes any chance of being cited in AI answers, a real trade-off worth deciding deliberately rather than by accident.</p>
+      <h4>llms.txt, a new and still-emerging idea</h4>
+      <p>A proposed convention, not yet universally adopted, where a site publishes a plain-language file at <code>/llms.txt</code> summarising what the site is, its key pages, and how AI systems should understand it. Essentially a sitemap written for a language model to read directly, rather than a machine-only XML file. Worth setting up as a low-effort, forward-looking step even while adoption is still growing.</p>
+      <h4>Structured data, again</h4>
+      <p>Schema markup (Organization, Product, FAQPage, Article) gives any crawler, human search engine or AI system, an unambiguous, machine-readable statement of facts. This is one of the few technical GEO steps that also directly benefits traditional SEO, so it's worth prioritising.</p>
+      <h4>Server-side rendering</h4>
+      <p>Just as with traditional SEO, if your key content only appears after JavaScript runs in the browser, some AI crawlers may see a blank or incomplete page. If your technical SEO audit from the earlier track flagged rendering issues, treat that as a GEO issue too.</p>
+    `,
+    example:`A business that blocked all AI crawlers by default, a common cautious setting on some hosting platforms, discovered it had zero presence across ChatGPT and Perplexity answers for its own product category. Not because competitors outranked it, but because it was invisible by configuration.`,
+    checklist:[
+      "Check your current robots.txt file for GPTBot, ClaudeBot, PerplexityBot, and Google-Extended rules",
+      "Decide deliberately whether to allow or block each one, don't leave it to a platform default",
+      "Verify your key pages render fully without requiring JavaScript (view page source and check the content is there)",
+      "Add or confirm Organization and FAQPage schema on your homepage and key content pages"
+    ],
+    tryThis:"Visit yourdomain.com/robots.txt right now and read what it actually says about AI crawlers. Most people have never looked."
+  },
+  {
+    title:"Measuring GEO. Tracking Something You Can't Click",
+    time:"14 min",
+    yt:"how to track AI search visibility brand mentions",
+    plain:"Traditional analytics tracks clicks and sessions. AI citations often generate no click at all, so measuring GEO means changing what you're willing to count as a win.",
+    body:`
+      <h4>Why this is genuinely harder than SEO tracking</h4>
+      <p>Google Analytics can tell you exactly how many people arrived from a Google search. It largely can't tell you how many people read your brand's name inside a ChatGPT answer and later searched for you directly, or bought from you without ever clicking a link. This is a real, unsolved measurement gap across the industry, not something you've simply missed.</p>
+      <h4>What you can actually track today</h4>
+      <ul>
+        <li><b>Manual prompt testing.</b> Regularly ask the major AI tools questions relevant to your business and log whether, and how accurately, you're mentioned. Simple, free, and surprisingly effective.</li>
+        <li><b>Referral traffic from AI tools.</b> Check your analytics for traffic sources like chat.openai.com or perplexity.ai. Some tools do pass a click through, and it's growing.</li>
+        <li><b>Branded search lift.</b> A rise in people searching your exact brand name in Google can sometimes follow an AI mention that made someone curious enough to look you up directly.</li>
+        <li><b>Emerging AI-visibility tools.</b> A new category of tools, still maturing, that attempt to track brand mentions across AI answers at scale, similar to how rank trackers work for traditional SEO.</li>
+      </ul>
+      <h4>Blending SEO and GEO reporting</h4>
+      <p>Rather than treating GEO as a totally separate report, it's more useful to add a simple AI visibility section alongside existing SEO reporting, even if that's currently just a monthly log of manual prompt checks. Clients and stakeholders increasingly ask about this directly, and having even a basic answer beats having none.</p>
+    `,
+    example:`A monthly routine of asking 10 fixed questions across ChatGPT, Perplexity, and Google AI Overviews, and logging the results in a simple spreadsheet, gives a genuinely useful trend line over time, without needing to buy a dedicated tool on day one.`,
+    checklist:[
+      "Write a fixed list of 10 questions a real customer might ask an AI assistant about your industry",
+      "Ask them across ChatGPT, Perplexity, and Google (checking for AI Overviews) and log the results",
+      "Check your analytics referral sources for any existing AI-tool traffic",
+      "Repeat monthly and track whether mentions increase, and whether the information given about you stays accurate"
+    ],
+    tryThis:"Run your fixed list of 10 questions today, right now, and save the results. That's your baseline. Everything from here gets measured against it."
+  }
+];
+
+const GLOSSARY = [
+  {term:"Crawling", def:"A robot visiting your site and reading its pages, following links to find more."},
+  {term:"Indexing", def:"Storing what got crawled in the search engine's own database, ready to be ranked."},
+  {term:"SERP", def:"Search Engine Results Page, the page of results you see after searching."},
+  {term:"Backlink", def:"A link from another website pointing to yours, treated like a vote of confidence."},
+  {term:"Anchor text", def:"The clickable words in a link. Descriptive anchor text helps both users and search engines."},
+  {term:"Core Web Vitals", def:"Google's metrics for how fast and stable a page feels to actually use."},
+  {term:"Canonical tag", def:"A tag telling search engines which version of a duplicate page is the real one to rank."},
+  {term:"Schema / structured data", def:"Extra code that spells out facts about a page in a format machines can read directly."},
+  {term:"hreflang", def:"A tag signalling which country or language version of a page to show which searchers."},
+  {term:"E-E-A-T", def:"Experience, Expertise, Authoritativeness, Trustworthiness. Google's trust framework for content quality."},
+  {term:"Retrieval", def:"An AI tool fetching relevant web content live, before writing an answer."},
+  {term:"Chunking", def:"Breaking a page into smaller pieces so an AI system can find and reuse the most relevant part."},
+  {term:"Embeddings", def:"A way of matching text by meaning rather than exact words. How AI systems find relevant content."},
+  {term:"llms.txt", def:"An emerging, plain-language sitemap file aimed at AI systems rather than traditional search robots."},
+  {term:"GPTBot / ClaudeBot / PerplexityBot", def:"The web crawlers used by OpenAI, Anthropic, and Perplexity to gather content."}
+];
+
+/* ============================================================
+   RENDER
+   ============================================================ */
+function ytLink(query){
+  return "https://www.youtube.com/results?search_query=" + encodeURIComponent(query);
+}
+
+function renderModules(list, panelId, trackKey){
+  const panel = document.getElementById(panelId);
+  panel.innerHTML = list.map((m, i) => {
+    const id = trackKey+'-'+i;
+    return `
+    <div class="module" id="module-${id}" data-mid="${id}" data-search="${(m.title+' '+m.plain).toLowerCase().replace(/"/g,'')}">
+      <div class="module-head" onclick="toggleModule('${id}')">
+        <div class="module-num" id="num-${id}">${i+1}</div>
+        <div class="module-headtext">
+          <p class="module-title">${m.title}</p>
+          <p class="module-meta"><span>${m.time}</span><span>·</span><span>${m.checklist.length} checklist items</span></p>
+        </div>
+        <div class="module-chevron">⌄</div>
+      </div>
+      <div class="module-body" id="body-${id}">
+        <div class="module-body-inner">
+          <div class="plain"><b>In plain English</b>${m.plain}</div>
+
+          <div class="action-row">
+            <a class="yt-btn" href="${ytLink(m.yt)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()">
+              <span class="yt-icon"></span> Watch related videos
+            </a>
+            <button class="note-btn" onclick="event.stopPropagation(); toggleNotes('${id}')">📝 My notes</button>
+            <button class="mark-done-btn" id="markdone-${id}" onclick="event.stopPropagation(); markModuleDone('${id}')">✓ Mark module complete</button>
+          </div>
+
+          ${m.body}
+          <div class="example"><b>⚙ Real example</b>${m.example}</div>
+          <div class="checklist" data-mid="${id}">
+            <p class="checklist-title">Work through this module</p>
+            ${m.checklist.map((c, ci) => `
+              <div class="check-row" data-key="${id}-${ci}" onclick="toggleCheck(this)">
+                <div class="check-box">✓</div>
+                <div class="check-label">${c}</div>
+              </div>
+            `).join('')}
+          </div>
+          <div class="try-this"><b>Try this →</b> ${m.tryThis}</div>
+
+          <div class="notes-area" id="notes-${id}">
+            <span class="notes-label">Your notes on this module</span>
+            <textarea placeholder="Jot down anything you want to remember or come back to..." data-notekey="${id}" oninput="saveNote(this)"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderTOC(list, trackKey){
+  const tocList = document.getElementById('tocList');
+  tocList.innerHTML = list.map((m,i)=>{
+    const id = trackKey+'-'+i;
+    return `<a class="toc-item" id="toc-${id}" data-mid="${id}" data-search="${m.title.toLowerCase()}" onclick="jumpTo('${id}')">
+      <span class="toc-check"></span><span>${m.title}</span>
+    </a>`;
+  }).join('');
+}
+
+function renderGlossary(){
+  document.getElementById('glossGrid').innerHTML = GLOSSARY.map(g=>`
+    <div class="gloss-card"><b>${g.term}</b><span>${g.def}</span></div>
+  `).join('');
+}
+
+function renderStats(){
+  const totalModules = SEO_MODULES.length + GEO_MODULES.length;
+  const totalChecks = TOTALS.seo + TOTALS.geo;
+  document.getElementById('statsBar').innerHTML = `
+    <div class="stat"><div class="stat-num">${totalModules}</div><div class="stat-label">Total modules</div></div>
+    <div class="stat"><div class="stat-num">${totalChecks}</div><div class="stat-label">Checklist items</div></div>
+    <div class="stat"><div class="stat-num" id="statDone">0</div><div class="stat-label">Completed by you</div></div>
+    <div class="stat"><div class="stat-num" id="statPct">0%</div><div class="stat-label">Overall progress</div></div>
+  `;
+}
+
+renderModules(SEO_MODULES, 'panel-seo', 'seo');
+renderModules(GEO_MODULES, 'panel-geo', 'geo');
+renderGlossary();
+
+/* ============================================================
+   STORAGE
+   Plain browser localStorage. Works on any host, including
+   GitHub Pages, with no external dependency.
+   ============================================================ */
+const STORAGE_PREFIX = 'seo-geo-course:';
+function storageGet(key){
+  try{
+    const raw = localStorage.getItem(STORAGE_PREFIX + key);
+    return raw === null ? null : raw;
+  }catch(e){ return null; }
+}
+function storageSet(key, value){
+  try{ localStorage.setItem(STORAGE_PREFIX + key, value); return true; }
+  catch(e){ return false; }
+}
+
+/* ============================================================
+   INTERACTIVITY
+   ============================================================ */
+let currentTrack = 'seo';
+const TOTALS = {
+  seo: SEO_MODULES.reduce((a,m)=>a+m.checklist.length,0),
+  geo: GEO_MODULES.reduce((a,m)=>a+m.checklist.length,0)
+};
+let checkedState = {};
+let notesState = {};
+renderStats();
+
+function toggleModule(id){
+  const mod = document.getElementById('module-'+id);
+  const body = document.getElementById('body-'+id);
+  const isOpen = mod.classList.contains('open');
+  if(isOpen){
+    body.style.maxHeight = null;
+    mod.classList.remove('open');
+  } else {
+    mod.classList.add('open');
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
+function toggleNotes(id){
+  const area = document.getElementById('notes-'+id);
+  area.classList.toggle('open');
+  const mod = document.getElementById('module-'+id);
+  const body = document.getElementById('body-'+id);
+  if(mod.classList.contains('open')){
+    setTimeout(()=>{ body.style.maxHeight = body.scrollHeight + 'px'; }, 10);
+  }
+  if(area.classList.contains('open')){
+    setTimeout(()=> area.querySelector('textarea').focus(), 200);
+  }
+}
+
+function saveNote(el){
+  const key = el.getAttribute('data-notekey');
+  notesState[key] = el.value;
+  storageSet('notes', JSON.stringify(notesState));
+}
+
+function jumpTo(id){
+  const trackOfId = id.startsWith('seo') ? 'seo' : 'geo';
+  if(trackOfId !== currentTrack) setTrack(trackOfId);
+  setTimeout(()=>{
+    const mod = document.getElementById('module-'+id);
+    if(!mod.classList.contains('open')) toggleModule(id);
+    mod.scrollIntoView({behavior:'smooth', block:'start'});
+  }, trackOfId !== currentTrack ? 150 : 0);
+}
+
+function scrollToFirstModule(){
+  const firstUnfinished = findFirstUnfinished(currentTrack);
+  jumpTo(firstUnfinished !== null ? currentTrack+'-'+firstUnfinished : currentTrack+'-0');
+}
+
+function findFirstUnfinished(track){
+  const list = track === 'seo' ? SEO_MODULES : GEO_MODULES;
+  for(let i=0; i<list.length; i++){
+    const id = track+'-'+i;
+    const m = list[i];
+    let modDone = 0;
+    for(let ci=0; ci<m.checklist.length; ci++){ if(checkedState[id+'-'+ci]) modDone++; }
+    if(modDone < m.checklist.length) return i;
+  }
+  return null;
+}
+
+function toggleCheck(el){
+  const key = el.getAttribute('data-key');
+  const nowChecked = !el.classList.contains('checked');
+  el.classList.toggle('checked', nowChecked);
+  checkedState[key] = nowChecked;
+  storageSet('progress', JSON.stringify(checkedState));
+  updateProgress();
+}
+
+function markModuleDone(id){
+  const list = id.startsWith('seo') ? SEO_MODULES : GEO_MODULES;
+  const idx = parseInt(id.split('-')[1]);
+  const m = list[idx];
+  const btn = document.getElementById('markdone-'+id);
+  const alreadyDone = btn && btn.classList.contains('is-done');
+  for(let ci=0; ci<m.checklist.length; ci++){
+    checkedState[id+'-'+ci] = !alreadyDone;
+    const row = document.querySelector('[data-key="'+id+'-'+ci+'"]');
+    if(row) row.classList.toggle('checked', !alreadyDone);
+  }
+  storageSet('progress', JSON.stringify(checkedState));
+  updateProgress();
+}
+
+function updateProgress(){
+  let grandDone = 0;
+  const totalChecks = TOTALS.seo + TOTALS.geo;
+
+  ['seo','geo'].forEach(track=>{
+    const total = TOTALS[track];
+    let done = 0;
+    Object.keys(checkedState).forEach(k=>{
+      if(k.startsWith(track) && checkedState[k]) done++;
+    });
+    grandDone += done;
+    const pct = total ? Math.round((done/total)*100) : 0;
+
+    const list = track === 'seo' ? SEO_MODULES : GEO_MODULES;
+    list.forEach((m,i)=>{
+      const id = track+'-'+i;
+      let modDone = 0;
+      for(let ci=0; ci<m.checklist.length; ci++){
+        if(checkedState[id+'-'+ci]) modDone++;
+      }
+      const complete = modDone === m.checklist.length && m.checklist.length>0;
+      const tocEl = document.getElementById('toc-'+id);
+      if(tocEl){
+        tocEl.classList.toggle('done', complete);
+        tocEl.querySelector('.toc-check').textContent = complete ? '✓' : '';
+      }
+      const numEl = document.getElementById('num-'+id);
+      if(numEl){ numEl.classList.toggle('complete', complete); numEl.textContent = complete ? '✓' : (i+1); }
+      const btnEl = document.getElementById('markdone-'+id);
+      if(btnEl){
+        btnEl.classList.toggle('is-done', complete);
+        btnEl.innerHTML = complete ? '✓ Module complete' : '✓ Mark module complete';
+      }
+    });
+
+    if(track === currentTrack){
+      const circumference = 59.7;
+      const offset = circumference - (pct/100)*circumference;
+      document.getElementById('navRing').style.strokeDashoffset = offset;
+      document.getElementById('navRingLabel').textContent = pct + '%';
+    }
+  });
+
+  const statDone = document.getElementById('statDone');
+  const statPct = document.getElementById('statPct');
+  if(statDone){ statDone.textContent = grandDone; }
+  if(statPct){ statPct.textContent = (totalChecks ? Math.round((grandDone/totalChecks)*100) : 0) + '%'; }
+
+  ['seo','geo'].forEach(track=>{
+    const total = TOTALS[track];
+    let done = 0;
+    Object.keys(checkedState).forEach(k=>{ if(k.startsWith(track) && checkedState[k]) done++; });
+    const justCompleted = total > 0 && done === total;
+    if(justCompleted && !trackCelebrated[track]){
+      trackCelebrated[track] = true;
+      showCelebration(track);
+    } else if(!justCompleted){
+      trackCelebrated[track] = false;
+    }
+  });
+}
+
+let trackCelebrated = {seo:false, geo:false};
+
+function showCelebration(track){
+  const banner = document.getElementById('celebration');
+  banner.querySelector('.celebration-text').textContent =
+    track === 'seo' ? "Every SEO checklist item done. Nicely finished." : "Every GEO checklist item done. Nicely finished.";
+  banner.classList.add('visible');
+  clearTimeout(showCelebration._t);
+  showCelebration._t = setTimeout(()=> banner.classList.remove('visible'), 5000);
+}
+
+function setTrack(track){
+  currentTrack = track;
+  document.getElementById('segmented').setAttribute('data-track', track);
+  document.querySelectorAll('[data-track-btn]').forEach(b=>{
+    b.classList.toggle('active', b.getAttribute('data-track-btn') === track);
+  });
+  document.getElementById('panel-seo').classList.toggle('visible', track==='seo');
+  document.getElementById('panel-geo').classList.toggle('visible', track==='geo');
+  document.getElementById('tocTitle').textContent = track === 'seo' ? 'SEO Track' : 'GEO Track';
+  renderTOC(track === 'seo' ? SEO_MODULES : GEO_MODULES, track);
+  updateProgress();
+  document.documentElement.setAttribute('data-current-track', track);
+  applySearchFilter();
+}
+
+document.querySelectorAll('[data-track-btn]').forEach(btn=>{
+  btn.addEventListener('click', ()=> setTrack(btn.getAttribute('data-track-btn')));
+});
+
+/* Reset progress */
+document.getElementById('resetBtn').addEventListener('click', ()=>{
+  if(!confirm('Reset all checklist progress and notes? This cannot be undone.')) return;
+  checkedState = {};
+  notesState = {};
+  trackCelebrated = {seo:false, geo:false};
+  document.querySelectorAll('.check-row.checked').forEach(r=>r.classList.remove('checked'));
+  document.querySelectorAll('textarea[data-notekey]').forEach(t=>t.value='');
+  storageSet('progress', JSON.stringify(checkedState));
+  storageSet('notes', JSON.stringify(notesState));
+  updateProgress();
+});
+
+/* Search / filter */
+const searchToggle = document.getElementById('searchToggle');
+const searchInput = document.getElementById('searchInput');
+searchToggle.addEventListener('click', ()=>{
+  searchInput.classList.toggle('open');
+  if(searchInput.classList.contains('open')) searchInput.focus();
+  else { searchInput.value=''; applySearchFilter(); }
+});
+searchInput.addEventListener('input', applySearchFilter);
+
+function applySearchFilter(){
+  const q = searchInput.value.trim().toLowerCase();
+  const activePanel = document.getElementById('panel-'+currentTrack);
+  const modules = activePanel.querySelectorAll('.module');
+  let visibleCount = 0;
+  modules.forEach(mod=>{
+    const hay = mod.getAttribute('data-search') || '';
+    const match = !q || hay.includes(q);
+    mod.classList.toggle('hidden-by-search', !match);
+    if(match) visibleCount++;
+  });
+  document.querySelectorAll('#tocList .toc-item').forEach(item=>{
+    const hay = item.getAttribute('data-search') || '';
+    const match = !q || hay.includes(q);
+    item.classList.toggle('hidden-by-search', !match);
+  });
+  document.getElementById('noResults').style.display = (q && visibleCount===0) ? 'block' : 'none';
+}
+
+/* Print */
+document.getElementById('printBtn').addEventListener('click', ()=>{
+  document.querySelectorAll('.module').forEach(mod=>{
+    mod.classList.add('open');
+    const body = mod.querySelector('.module-body');
+    body.style.maxHeight = 'none';
+  });
+  setTimeout(()=> window.print(), 150);
+});
+
+/* Back to top */
+const backToTop = document.getElementById('backToTop');
+window.addEventListener('scroll', ()=>{
+  backToTop.classList.toggle('visible', window.scrollY > 500);
+});
+backToTop.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+/* Theme toggle */
+function setTheme(theme){
+  document.documentElement.setAttribute('data-theme', theme);
+  document.getElementById('themeKnob').textContent = theme === 'night' ? '🌙' : '☀️';
+  storageSet('theme', theme);
+}
+document.getElementById('themeToggle').addEventListener('click', ()=>{
+  const isNight = document.documentElement.getAttribute('data-theme') === 'night';
+  setTheme(isNight ? 'day' : 'night');
+});
+
+/* Scroll-spy: highlight the module currently in view within the sidebar TOC */
+let spyTicking = false;
+function updateScrollSpy(){
+  spyTicking = false;
+  const activePanel = document.getElementById('panel-'+currentTrack);
+  const modules = activePanel.querySelectorAll('.module:not(.hidden-by-search)');
+  let activeId = null;
+  const triggerLine = window.innerHeight * 0.35;
+  modules.forEach(mod=>{
+    const rect = mod.getBoundingClientRect();
+    if(rect.top <= triggerLine && rect.bottom > 0){ activeId = mod.getAttribute('data-mid'); }
+  });
+  document.querySelectorAll('#tocList .toc-item').forEach(item=>{
+    item.classList.toggle('active-view', item.getAttribute('data-mid') === activeId);
+  });
+}
+window.addEventListener('scroll', ()=>{
+  if(!spyTicking){ spyTicking = true; requestAnimationFrame(updateScrollSpy); }
+});
+
+/* Init */
+function init(){
+  renderTOC(SEO_MODULES, 'seo');
+
+  const savedTheme = storageGet('theme');
+  if(savedTheme){ setTheme(savedTheme); }
+  else {
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setTheme(prefersDark ? 'night' : 'day');
+  }
+
+  const savedProgress = storageGet('progress');
+  if(savedProgress){
+    try{
+      checkedState = JSON.parse(savedProgress);
+      Object.keys(checkedState).forEach(k=>{
+        if(checkedState[k]){
+          const row = document.querySelector('[data-key="'+k+'"]');
+          if(row) row.classList.add('checked');
+        }
+      });
+    }catch(e){ checkedState = {}; }
+  }
+
+  const savedNotes = storageGet('notes');
+  if(savedNotes){
+    try{
+      notesState = JSON.parse(savedNotes);
+      Object.keys(notesState).forEach(k=>{
+        const ta = document.querySelector('textarea[data-notekey="'+k+'"]');
+        if(ta) ta.value = notesState[k];
+      });
+    }catch(e){ notesState = {}; }
+  }
+
+  // Consider tracks already at 100% on load as already celebrated, so
+  // returning visitors don't get the banner again for old progress.
+  ['seo','geo'].forEach(track=>{
+    const total = TOTALS[track];
+    let done = 0;
+    Object.keys(checkedState).forEach(k=>{ if(k.startsWith(track) && checkedState[k]) done++; });
+    trackCelebrated[track] = (total > 0 && done === total);
+  });
+
+  updateProgress();
+}
+init();
+</script>
+</body>
+</html>
